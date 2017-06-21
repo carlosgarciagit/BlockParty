@@ -1,0 +1,95 @@
+<div class="container-fluid">
+    <div id="header-image" class="row text-white text-center align-items-center">
+        <div class="col">
+            <h1 class="display-3">BlockParty</h1>
+            <p class="lead">Taking Action Made Easy</p>
+            <% if current_user.present? %>
+              <a href="<%= edit_users_path %>" class="btn btn-primary">Join Us</a>
+            <% else %>
+              <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#sign-up-modal">Join Us</a>
+            <% end %>
+        </div>
+    </div>
+    <div class="row bg-primary justify-content-center">
+        <div class="col-6 m-5">
+            <h2 class="display-4 text-white text-center">Join the Party</h2>
+        </div>
+        <div class="card-group">
+            <div class="card card-primary card-inverse">
+                <img class="card-img-top card-icon" src="<%= image_path('busy-icon.png') %>" alt="For the Busy Individual">
+                <div class="card-block">
+                    <h4 class="card-title text-uppercase">For the Busy Individual</h4>
+                    <p class="card-text">You want to give back or fight for a cause you believe in. But with work, life and family it’s easy to feel overwhelmed and not know where to start.</p>
+                </div>
+            </div>
+            <div class="card card-primary card-inverse">
+                <img class="card-img-top card-icon" src="<%= image_path('connected-icon.png') %>" alt="Connected to Causes">
+                <div class="card-block">
+                    <h4 class="card-title text-uppercase">Connecting to Causes</h4>
+                    <p class="card-text"> We connect you with any affiliation of organizations, non-profits and causes and help you build active communities through shareable experiences.</p>
+                </div>
+            </div>
+            <div class="card card-primary card-inverse">
+                <img class="card-img-top card-icon" src="<%= image_path('stars-icon.png') %>" alt="Unique Experiences">
+                <div class="card-block">
+                    <h4 class="card-title text-uppercase">Earn Unique Experiences (coming soon!)</h4>
+                    <p class="card-text">Even better, with each action you take, you build your cause profile and new skills while earning points towards amazing, sponsored experiences and rewards. More to come on this feature!</p>
+                </div>
+            </div>
+            <div class="card card-primary card-inverse">
+                <img class="card-img-top card-icon" src="<%= image_path('clipboard-icon.png') %>" alt="Social Task-Based Engagement">
+                <div class="card-block">
+                    <h4 class="card-title text-uppercase">Social Task-Based Engagement</h4>
+                    <p class="card-text"> We break-down engagement into actions to make it easy for you to sign up and commit time to a cause you believe in. Sign up for actions, invite others to join and perform actions with your friends. </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="Sign Up" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header justify-content-center">
+                    <h5 class="modal-title">Welcome To Blockparty</h5>
+                </div>
+                <div class="modal-body">
+                    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                        <div class="form-group row">
+                            <div class="col">
+                                <%= f.email_field :email, autofocus: true, class: "form-control form-control-lg", placeholder: 'Email' %>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col">
+                                <%= f.password_field :password, autofocus: true, autocomplete: 'off', class: "form-control form-control-lg", placeholder: 'Password' %>
+                                <% if @minimum_password_length %>
+                                    <small id="passwordHelpInline" class="text-muted">
+                                        (<%= @minimum_password_length %> characters minimum)
+                                    </small>
+                                <% end %>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col">
+                                <%= f.submit class: "btn btn-primary btn-block" %>
+                            </div>
+                        </div>
+                    <% end %>
+                    <div class="row">
+                        <div class="col text-center">
+                            <p><b>OR</b></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col" id="facebook-signup">
+                            <%= link_to(user_facebook_omniauth_authorize_path) do %>
+                                <img src="<%= image_path('facebook-signup.png')%>" alt="Continue with Facebook", class="img-fluid">
+                            <% end %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

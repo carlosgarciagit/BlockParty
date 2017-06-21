@@ -1,0 +1,14 @@
+default: &default
+  adapter: mysql2
+  username: <%= ENV['MYSQL_USER'] %>
+  password: <%= ENV['MYSQL_PASSWORD'] %>
+  host: <%= ENV['MYSQL_HOST'] %>
+  encoding: utf8
+
+development: &development
+  <<: *default
+  database: BlockParty_dev
+
+test:
+  <<: *default
+  database: BlockParty_test<%= ENV["TEST_ENV_NUMBER"] %>

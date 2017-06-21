@@ -1,0 +1,11 @@
+$brand-primary: #27c2aa;
+$enable-shadows: true;
+$small-font-size: 70%;
+
+@import "bootstrap";
+@import "chosen";
+@import "**/*";
+
+.bg-primary {
+    background-color: $brand-primary;
+}
