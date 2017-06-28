@@ -31,6 +31,8 @@ gem 'omniauth-facebook'
 
 gem 'chosen-rails'
 
+gem 'carrierwave', '~> 1.0'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

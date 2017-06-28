@@ -8,8 +8,10 @@ class UsersController < ApplicationController
   def update
     if @user.update(user_params)
       #TODO events path
+      flash[:notice] = 'Updated your profile'
       redirect_to root_path
     else
+      # TODO  error messages
       render :edit
     end
   end
@@ -21,7 +23,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name)
+    params.require(:user).permit(:first_name, :last_name, :avatar, interest_ids: [])
   end
 
 end

@@ -18,8 +18,24 @@
 
         <div class="form-group row">
             <div class="col">
+                <p>Update avatar</p>
+                <label class="custom-file">
+                    <%= f.file_field :avatar, {class: 'custom-file-input'} %>
+                    <span class="custom-file-control"></span>
+                </label>
+            </div>
+            <% if @user.avatar_url.present? %>
+                <div class="col">
+                    <p>Current Avatar</p>
+                    <img class="rounded-circle img-thumbnail" src="<%= @user.avatar_url %>" alt="Profile" width="100" height="100" />
+                </div>
+            <% end %>
+        </div>
+
+        <div class="form-group row">
+            <div class="col">
                 <%= f.label :interests %>
-                <%= f.select :interests, Interest.all.collect {|i| [i.name, i.id]}, {}, { placeholder: "How are you interested in volunteering", multiple: true, class: "chosen-select"} %>
+                <%= f.select :interest_ids, Interest.all.collect {|i| [i.name, i.id]}, {}, { placeholder: "How are you interested in volunteering", multiple: true, class: "chosen-select"} %>
             </div>
         </div>
 

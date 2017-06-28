@@ -6,6 +6,18 @@ $small-font-size: 70%;
 @import "chosen";
 @import "**/*";
 
+
 .bg-primary {
     background-color: $brand-primary;
+}
+
+/* bootstrap overrides */
+.navbar-brand {
+    padding: 0;
+}
+.navbar-nav .nav-link {
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 50px;
+    line-height: 50px;
 }

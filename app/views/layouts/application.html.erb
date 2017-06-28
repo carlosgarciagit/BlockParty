@@ -21,12 +21,12 @@
                     <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                         <ul class="navbar-nav">
                             <%= nav_link "Home", root_path %>
-                            <%= nav_link "Actions", "#" %>
+                            <%= nav_link "Events", "#" %>
 
                             <% if current_user.present? %>
                                 <li class="nav-item dropdown <%= current_page?(edit_users_path) ? "active <span class='sr-only'>(current)</span>" : '' %>">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Profile
+                                        <img class="rounded-circle img-thumbnail" src="<%= current_user.avatar_url %>" alt="Profile" width="75" height="75" />
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                         <a class="dropdown-item" href="<%= edit_users_path %>">Edit</a>
