@@ -1,0 +1,20 @@
+<div class="container">
+    <!-- Upcoming Events -->
+    <div class="row">
+        <div class="col">
+            <h2 class="mt-3 mb-3">Upcoming Events</h2>
+        </div>
+    </div>
+    <% @upcoming_events.each do |event| %>
+        <%= render partial: 'event', locals: { event: event } %>
+    <% end %>
+    <!-- Previous Events -->
+    <div class="row">
+        <div class="col">
+            <h2 class="mt-3 mb-3">Previous Events</h2>
+        </div>
+    </div>
+    <% @previous_events.each do |event| %>
+        <%= render partial: 'event', locals: { event: event } %>
+    <% end %>
+</div>

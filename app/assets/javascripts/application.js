@@ -16,6 +16,7 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require chosen-jquery
+//= require trix
 
 
 // initialize chosen select boxes

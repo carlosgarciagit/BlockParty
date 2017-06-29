@@ -1,0 +1,5 @@
+<div class="container">
+    <%= form_for(@event, url: events_path) do |f| %>
+        <%= render partial: 'event_form', locals: { f: f } %>
+    <% end %>
+</div>

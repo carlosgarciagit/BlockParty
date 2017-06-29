@@ -1,0 +1,50 @@
+<div class="form-group row">
+    <div class="col">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: "form-control form-control-lg" %>
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col">
+        <%= f.label :description %>
+        <%= f.trix_editor :description, rows: 10 %>
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col">
+        <%= f.label :start_time %>
+        <%= f.datetime_field :start_time, class: "form-control form-control-lg" %>
+    </div>
+    <div class="col">
+        <%= f.label :end_time %>
+        <%= f.datetime_field :end_time, class: "form-control form-control-lg" %>
+    </div>
+</div>
+
+
+<div class="form-group row">
+    <div class="col">
+        <p>Update event photo</p>
+        <label class="custom-file">
+            #TODO come back and make these file uploads nice
+            # in particular wait for resolution on this issue -- https://github.com/twbs/bootstrap/issues/20813
+            <%= f.file_field :event_photo, {class: 'custom-file-input'} %>
+            <%= f.hidden_field :event_photo_cache %>
+            <span class="custom-file-control"></span>
+        </label>
+    </div>
+    <% if @event.event_photo? %>
+        <div class="col">
+            <p>Current Event Photo</p>
+            <%= image_tag(@event.event_photo_url, class: 'img-fluid', alt: @event.name) %>
+        </div>
+    <% end %>
+</div>
+
+<div class="form-group row">
+    <div class="col-10">
+        <%= f.submit "Update", class: "btn btn-primary" %>
+    </div>
+</div>

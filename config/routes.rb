@@ -4,8 +4,12 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => { omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'registrations'}, path: 'registration'
 
+
   authenticate :user do
     resource :users, only: [:edit, :update]
   end
+
+  #TODO authenticate other event routes
+  resources :events
 
 end
