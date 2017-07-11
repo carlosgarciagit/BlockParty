@@ -11,3 +11,20 @@
         <p class="card-text"><%= sanitize(event.description) %></p>
     </div>
 </div>
+
+<div class="row">
+  <% if not upcoming %>
+    <div></div>
+
+  <% elsif registered %>
+    <div class="col-6 offset-3 pt-1 pb-1 text-center bg-primary text-white rounded">
+      <span class = "align-bottom">You are signed up for this event. See you on <%= event.start_time.strftime("%B %d") %> at <%= event.start_time.strftime("%I:%M %P") %>!</span>
+    </div>
+
+  <% else %>
+    <div class = "col-6 offset-3", id= "event-register-<%= event.id %>">
+      <%= link_to 'Click to Register', register_for_event_path, class: 'btn btn-primary', data: {remote: true, method: 'post', params: "event_id= #{event.id}" }%>
+    </div>
+
+  <% end %>
+</div>

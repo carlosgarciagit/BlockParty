@@ -11,12 +11,12 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require_tree .
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
 //= require chosen-jquery
 //= require trix
+//= require_tree .
 
 
 // initialize chosen select boxes

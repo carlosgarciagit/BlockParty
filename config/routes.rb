@@ -11,5 +11,6 @@ Rails.application.routes.draw do
 
   #TODO authenticate other event routes
   resources :events
+  post :register_for_event, to: "events#register"
 
 end

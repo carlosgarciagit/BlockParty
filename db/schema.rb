@@ -10,9 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170628144548) do
+ActiveRecord::Schema.define(version: 20170629155953) do
 
-  create_table "events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "event_registrations", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "event_id"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "event_id"], name: "index_event_registrations_on_user_id_and_event_id"
+  end
+
+  create_table "events", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.datetime "start_time"
@@ -22,21 +31,21 @@ ActiveRecord::Schema.define(version: 20170628144548) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "interests", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "interests", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_interests_on_name", unique: true
   end
 
-  create_table "interests_users", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.bigint "interest_id", null: false
-    t.bigint "user_id", null: false
+  create_table "interests_users", id: false, force: :cascade do |t|
+    t.integer "interest_id", null: false
+    t.integer "user_id", null: false
     t.index ["interest_id", "user_id"], name: "index_interests_users_on_interest_id_and_user_id"
     t.index ["user_id", "interest_id"], name: "index_interests_users_on_user_id_and_interest_id"
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

@@ -6,7 +6,8 @@
         </div>
     </div>
     <% @upcoming_events.each do |event| %>
-        <%= render partial: 'event', locals: { event: event } %>
+        <% registered = @registered_events.include?(event) %>
+        <%= render partial: 'event', locals: { event: event, registered: registered, upcoming: true } %>
     <% end %>
     <!-- Previous Events -->
     <div class="row">
@@ -15,6 +16,6 @@
         </div>
     </div>
     <% @previous_events.each do |event| %>
-        <%= render partial: 'event', locals: { event: event } %>
+        <%= render partial: 'event', locals: { event: event, registered: false, upcoming: false } %>
     <% end %>
 </div>

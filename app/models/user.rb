@@ -6,7 +6,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable, omniauth_providers: [:facebook]
 
   has_and_belongs_to_many :interests
-
+  has_many :event_registrations
+  has_many :events, through: :event_registrations
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

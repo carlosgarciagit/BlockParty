@@ -19,3 +19,7 @@
 .byebug_history
 /public/packs
 /node_modules
+BlockParty_dev
+BlockParty_test
+public/uploads/event/*/**
+public/uploads/user/*/**

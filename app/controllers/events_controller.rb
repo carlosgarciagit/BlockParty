@@ -4,6 +4,9 @@ class EventsController < ApplicationController
     now = Time.zone.now
     @upcoming_events = Event.all.where('end_time >= ?', now)
     @previous_events = Event.all.where('end_time < ?', now)
+
+    @registered_events = EventRegistration.where(user: current_user).collect{ |event_registration| event_registration.event}
+
   end
 
   def show
@@ -38,7 +41,12 @@ class EventsController < ApplicationController
       flash[:alert] = "Errors!!!!"
       render :edit
     end
+  end
 
+  def register
+    @event = Event.find(params[:event_id])
+    user = current_user
+    event_registration = EventRegistration.create(event: @event, user: user)
   end
 
   private
