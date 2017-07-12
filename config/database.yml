@@ -10,3 +10,7 @@ development: &development
 test:
   <<: *default
   database: BlockParty_test<%= ENV["TEST_ENV_NUMBER"] %>
+
+staging:
+  <<: *default
+  database: BlockParty_staging
