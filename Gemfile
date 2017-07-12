@@ -11,8 +11,6 @@ gem 'rails', '~> 5.1.1'
 # Use Puma as the app server
 gem 'sqlite3'
 
-gem 'wdm', '>= 0.1.0'
-
 gem 'puma', '~> 3.7'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
@@ -46,6 +44,9 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem "capistrano", "~> 3.8"
+  gem 'capistrano-rails', '~> 1.1' 
+  gem 'wdm', '>= 0.1.0'
 end
 
 group :development do
