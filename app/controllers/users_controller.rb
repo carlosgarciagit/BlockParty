@@ -3,6 +3,18 @@ class UsersController < ApplicationController
   before_action :set_user
 
   def edit
+    now = Time.zone.now
+    @upcoming_events = []
+    @previous_events = []
+    registered_events = EventRegistration.where(user: current_user).collect{ |event_registration| event_registration.event}
+
+    registered_events.each do |event|
+      if event.start_time >= now
+        @upcoming_events.push(event)
+      else
+        @previous_events.push(event)
+      end
+    end
   end
 
   def update

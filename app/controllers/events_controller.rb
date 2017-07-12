@@ -10,7 +10,12 @@ class EventsController < ApplicationController
   end
 
   def show
+    now = Time.zone.now
     @event = Event.find(params[:id])
+
+    @registered = @event.users.include?(current_user)
+    @upcoming = @event.end_time > now
+
   end
 
   def new
@@ -21,6 +26,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     if @event.save
       redirect_to event_path(@event)
+
     else
       #TODO error messages
       flash[:alert] = "Errors!!!!"

@@ -1,0 +1,17 @@
+<div class = 'col-2'>
+  <% if event.event_photo.file.nil? %>
+    <img class="img-fluid img-thumbnail" src="<%= image_url('blank_avatar.png') %>" alt="Event Image" />
+  <% else %>
+    <img class="img-fluid img-thumbnail" src="<%= event.event_photo_url %>" alt="Event Image" />
+  <% end %>
+
+
+</div>
+
+<div class = 'col-4'>
+  <span class = 'font-weight-bold'> What: </span> <%= event.name%> <br>
+  <span class = 'font-weight-bold'> When: </span> <%= event.start_time.strftime("%B %d") %> at <%= event.start_time.strftime("%I %M %P") %> <br><br>
+
+  <%= link_to 'View Event Details', event, class: 'btn btn-primary', data: {event: @event, upcoming: @upcoming, registered: @registered }%>
+
+</div>

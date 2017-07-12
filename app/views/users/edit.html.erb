@@ -45,4 +45,24 @@
             </div>
         </div>
     <% end %>
+
+    <div class = 'form-group row'>
+      <div class = 'col'>
+        <span><h2>Your Upcoming Events</h2></span><br>
+          <div class = 'row'>
+            <% @upcoming_events.each do |event| %>
+              <%= render partial: 'events/event_display', locals: { event: event } %>
+            <% end %>
+          </div><br>
+
+        <span><h2>Your Previous Events</h2></span><br>
+          <div class = 'row'>
+            <% @previous_events.each do |event| %>
+              <%= render partial: 'events/event_display', locals: { event: event } %>
+            <% end %>
+          </div>
+
+      </div>
+    </div>
+
 </div>
