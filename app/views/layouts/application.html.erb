@@ -47,7 +47,7 @@
                     </div>
             </nav>
 
-            <div class="container-fluid">
+            <div class="container-fluid" style = "height:66px">
                 <% if notice.present? %>
                     <div class="alert alert-info alert-dismissible fade show" role="alert">
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -65,8 +65,6 @@
                     </div>
                 <% end %>
             </div>
-        <div style="height:66px;">
-        </div>
         <%= yield %>
     </body>
 </html>
