@@ -11,8 +11,6 @@ gem 'rails', '~> 5.1.1'
 # Use Puma as the app server
 gem 'sqlite3'
 
-gem 'wdm', '>= 0.1.0'
-
 gem 'puma', '~> 3.7'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
@@ -39,15 +37,16 @@ gem 'chosen-rails'
 gem 'carrierwave', '~> 1.0'
 gem 'trix'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem "capistrano", "~> 3.8"
+  gem 'capistrano-rails', '~> 1.1' 
+  gem 'capistrano3-puma'
+  gem 'wdm', '>= 0.1.0', platforms: [:mswin]
 end
 
 group :development do
@@ -61,3 +60,5 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'yui-compressor'
