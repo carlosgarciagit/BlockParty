@@ -6,6 +6,9 @@ require "capistrano/deploy"
 
 require 'capistrano/rails'
 
+require 'capistrano/puma'
+install_plugin Capistrano::Puma  # Default puma tasks
+
 # Load the SCM plugin appropriate to your project:
 #
 # require "capistrano/scm/hg"
