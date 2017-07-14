@@ -46,6 +46,7 @@ group :development, :test do
   gem "capistrano", "~> 3.8"
   gem 'capistrano-rails', '~> 1.1' 
   gem 'capistrano3-puma'
+  gem 'capistrano-rbenv', '~> 2.1'
   gem 'wdm', '>= 0.1.0', platforms: [:mswin]
 end
 

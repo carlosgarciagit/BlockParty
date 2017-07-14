@@ -10,7 +10,10 @@ require 'capistrano/puma'
 install_plugin Capistrano::Puma  # Default puma tasks
 install_plugin Capistrano::Puma::Nginx  # if you want to upload a nginx site template
 
+require 'capistrano/rbenv'
+
 # Load the SCM plugin appropriate to your project:
+
 #
 # require "capistrano/scm/hg"
 # install_plugin Capistrano::SCM::Hg
