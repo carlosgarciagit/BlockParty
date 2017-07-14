@@ -1,10 +1,20 @@
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9&appId=429896290718534";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 <div class="container-fluid">
     <div id="header-image" class="row text-white text-center align-items-center">
         <div class="col">
             <h1 class="display-3">BlockParty</h1>
             <p class="lead">Taking Action Made Easy</p>
             <% if current_user.present? %>
-                <a href="<%= edit_users_path %>" class="btn btn-primary">Join Us</a>
+                <a href="<%= edit_users_path %>" class="btn btn-primary">Join Us</a><br>
+                <div class="fb-like mt-2" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
             <% else %>
                 <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#sign-up-modal">Join Us</a>
             <% end %>
