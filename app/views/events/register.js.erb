@@ -1,4 +1,6 @@
 var registerLink = $("#event-register-<%= @event.id %>");
-
+var usersGoing = $("#users-going-<%= @event.id %>");
 
 registerLink.html("<div class='col-4 pt-1 pb-1 text-center bg-primary text-white rounded'><span class = 'align-bottom'>Signed up!</span></div>")
+
+usersGoing.html("<%=j render partial: 'attending', locals: {event: @event} %> ")

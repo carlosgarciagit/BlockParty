@@ -6,7 +6,6 @@ class EventsController < ApplicationController
     @previous_events = Event.all.where('end_time < ?', now)
 
     @registered_events = EventRegistration.where(user: current_user).collect{ |event_registration| event_registration.event}
-
   end
 
   def show
@@ -15,6 +14,7 @@ class EventsController < ApplicationController
 
     @registered = @event.users.include?(current_user)
     @upcoming = @event.end_time > now
+
 
   end
 

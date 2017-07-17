@@ -1,0 +1,14 @@
+<div id= "users-going-<%=event.id%>">
+  <div class = 'mt-3'>
+    There are <%= event.users.count %> people signed up for this event!
+  </div>
+
+  <div class = 'row'>
+    <% event.users.each do |user| %>
+      <div class = 'mt-2 col-1 text-center'>
+        <img class="rounded-circle img-thumbnail" src="<%= user.avatar %>" alt="Profile" width="75" height="75" /><br>
+        <%= user.first_name %>
+      </div>
+    <% end %>
+  </div>
+</div>
