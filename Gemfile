@@ -45,7 +45,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem "capistrano", "~> 3.8"
-  gem 'capistrano-rails', '~> 1.1' 
+  gem 'capistrano-rails', '~> 1.1'
   gem 'capistrano3-puma'
   gem 'capistrano-rbenv', '~> 2.1'
   gem 'wdm', '>= 0.1.0', platforms: [:mswin]
@@ -60,9 +60,6 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-group :staging do
-  gem 'mysql2'
-end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
