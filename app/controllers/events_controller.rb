@@ -19,6 +19,8 @@ class EventsController < ApplicationController
     @registered = @event.users.include?(current_user)
     @upcoming = @event.end_time > now
 
+    @user = current_user
+
 
   end
 

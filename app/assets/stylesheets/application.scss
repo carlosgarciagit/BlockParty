@@ -1,6 +1,10 @@
 $brand-primary: #27c2aa;
 $enable-shadows: true;
 $small-font-size: 70%;
+$font-family-sans-serif:  "proxima_nova_ltsemibold", Helvetica, Arial, sans-serif;
+$font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
+
+
 
 $custom-file-text: (
     placeholder: (
@@ -19,9 +23,10 @@ $custom-file-text: (
 @import "**/*";
 
 
-body {
-    font-family: 'Proxima Nova', Georgia, sans-serif;
-}
+// body {
+//     font-family: 'Proxima Nova', Georgia, sans-serif;
+// }
+
 
 .bg-primary {
     background-color: $brand-primary;
@@ -42,14 +47,45 @@ trix-editor {
     min-height: 320px;
 }
 
+h1 {
+  font-family: "proxima_nova_altbold", Georgia, sans-serif;
+}
+
+
 h3, h5 {
     color: $brand-primary;
+}
+
+h6 {
+  font-family: "Proxima Nova", Georgia, sans-serif;
+  font-style: italic;
 }
 
 // footer styling
 .footer {
   background-color: $gray-lighter;
 }
+
+
+// support for custom file uploads
+.custom-file-name:after {
+  content: attr(data-content) !important;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: block;
+  height: 100%;
+  overflow: hidden;
+  padding: 0.5rem 1rem;
+}
+
+.custom-file-control:before{
+  content: "Browse";
+}
+.custom-file-control:after{
+  content: "Add/Update Avatar...";
+}
+
 
 
 //Proxima Nova Font Family

@@ -18,11 +18,13 @@
 
         <div class="form-group row">
             <div class="col">
+
                 <p>Update avatar</p>
                 <label class="custom-file">
                     <%= f.file_field :avatar, {class: 'custom-file-input'} %>
                     <span class="custom-file-control"></span>
                 </label>
+
             </div>
             <% if @user.avatar.file.present? %>
                 <div class="col">
@@ -44,7 +46,7 @@
                 <%= f.submit "Update", class: "btn btn-primary" %>
             </div>
         </div>
-    <% end %>
+    <% end %><br>
 
     <div class = 'form-group row'>
       <div class = 'col'>

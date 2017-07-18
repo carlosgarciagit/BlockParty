@@ -1,13 +1,14 @@
 
-<div class="container-fluid">
+<div class="container-fluid text-center">
     <div id="header-image" class="row text-white text-center align-items-center">
         <div class="col">
-            <h1 class="display-3">BlockParty</h1>
-            <p class="lead">Taking Action Made Easy</p>
+              <h1 class="display-3">Blockparty</h1>
+              <h6 class="lead">Foodies Fighting Hunger</h6><br>
             <% if current_user.present? %>
-                <a href="<%= edit_users_path %>" class="btn btn-primary">Join Us</a><br>
+                <a href="<%= edit_users_path %>" class="btn btn-primary">My Profile</a><br>
             <% else %>
-                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#sign-up-modal">Join Us</a>
+                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#sign-up-modal">Sign Up</a>
+                <a href="<%= new_user_session_path %>" class = "btn btn-primary"> Log In</a>
             <% end %>
         </div>
     </div>
