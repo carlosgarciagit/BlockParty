@@ -12,10 +12,12 @@ test:
   database: BlockParty_test<%= ENV["TEST_ENV_NUMBER"] %>
 
 staging:
-  adapter: mysql2
-  database: <%= ENV['DB_NAME'] %>
-  host: <%= ENV['DB_HOST'] %>
-  password: <%= ENV['DB_PASSWORD'] %>
-  username: <%= ENV['DB_USERNAME'] %>
-  sslmode: 'REQUIRED'
-  sslca: /aurora/rds-combined-ca-bundle.pem
+  <<: *default
+  database: BlockParty_staging
+  # adapter: mysql2
+  # database: <%= ENV['DB_NAME'] %>
+  # host: <%= ENV['DB_HOST'] %>
+  # password: <%= ENV['DB_PASSWORD'] %>
+  # username: <%= ENV['DB_USERNAME'] %>
+  # sslmode: 'REQUIRED'
+  # sslca: /aurora/rds-combined-ca-bundle.pem
