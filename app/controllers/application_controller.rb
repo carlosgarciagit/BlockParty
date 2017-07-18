@@ -4,4 +4,7 @@ class ApplicationController < ActionController::Base
   def home
   end
 
+  def check_privileges!
+    redirect_to "/", notice: 'You dont have enough permissions to be here' unless current_user.admin
+  end
 end

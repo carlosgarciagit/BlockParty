@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  before_action :check_privileges!, except: [:show, :index, :register]
 
   def index
     now = Time.zone.now
@@ -6,6 +7,9 @@ class EventsController < ApplicationController
     @previous_events = Event.all.where('end_time < ?', now)
 
     @registered_events = EventRegistration.where(user: current_user).collect{ |event_registration| event_registration.event}
+
+    @user = current_user
+
   end
 
   def show
@@ -36,6 +40,7 @@ class EventsController < ApplicationController
 
   def edit
     @event = Event.find(params[:id])
+    @user = current_user
   end
 
   def update
