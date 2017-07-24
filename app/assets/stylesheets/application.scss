@@ -23,13 +23,73 @@ $custom-file-text: (
 @import "**/*";
 
 
-// body {
-//     font-family: 'Proxima Nova', Georgia, sans-serif;
-// }
 
 
 .bg-primary {
     background-color: $brand-primary;
+}
+
+.footer-top {
+  background-color: $gray-lighter;
+  height: 75px
+}
+
+.footer-bot {
+  background:
+      linear-gradient(
+          rgba(0, 0, 0, 0.4),
+          rgba(0, 0, 0, 0.4)
+      ),
+      url(image-path("bbq-lesson.jpg"));
+  background-position: center;
+  background-size: cover;
+  height: 75px;
+  color: white;
+}
+
+.btn-circle {
+ border-radius: 50%;
+ height: 50px;
+ width: 50px;
+}
+
+/* Style all font awesome icons */
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+    opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+.fa-youtube {
+    content: "\f167";
+    background: #bb0000;
+    color: white;
+}
+
+.footer-text {
+  padding: 15px;
+  color: black;
 }
 
 /* bootstrap overrides */
@@ -82,6 +142,7 @@ h6 {
 .custom-file-control:before{
   content: "Browse";
 }
+
 .custom-file-control:after{
   content: "Add/Update Avatar...";
 }
@@ -146,8 +207,6 @@ h6 {
 }
 
 
-
-
 @font-face {
     font-family: 'proxima_nova_ltsemibold';
     src: url('Mark Simonson - Proxima Nova Semibold-webfont.eot');
@@ -160,6 +219,19 @@ h6 {
     font-style: normal;
 
 }
+
+// @font-face {
+//     font-family: 'proxima_nova_ltsemibold';
+//     src:font-url('Mark%20Simonson%20-%20Proxima%20Nova%20Semibold-webfont.eot');
+//     src:font-url('Mark%20Simonson%20-%20Proxima%20Nova%20Semibold-webfont.eot%3F%23iefix') format('embedded-opentype'),
+//          font-url('Mark%20Simonson%20-%20Proxima%20Nova%20Semibold-webfont.woff2') format('woff2'),
+//          font-url('Mark%20Simonson%20-%20Proxima%20Nova%20Semibold-webfont.woff') format('woff'),
+//          font-url('Mark%20Simonson%20-%20Proxima%20Nova%20Semibold-webfont.ttf') format('truetype'),
+//          font-url('Mark%20Simonson%20-%20Proxima%20Nova%20Semibold-webfont.svg%23proxima_nova_ltsemibold') format('svg');
+//     font-weight: normal;
+//     font-style: normal;
+//
+// }
 
 @font-face {
     font-family: 'proxima_nova_ltthin';

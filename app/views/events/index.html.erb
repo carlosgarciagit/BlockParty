@@ -1,8 +1,8 @@
-<div class="container">
+<div class="container mb-3">
     <% if @user != nil %>
       <% if @user.admin %>
         <br>
-        <%= link_to 'Create New Event', new_event_path, class: 'btn btn-primary' %>
+        <%= link_to 'Create New Event', new_event_path, class: 'btn btn-primary mb-3' %>
       <% end %>
     <% end %>
 
@@ -14,7 +14,7 @@
     </div>
     <% @upcoming_events.each do |event| %>
         <% registered = @registered_events.include?(event) %>
-        <%= render partial: 'event', locals: { event: event, user: @user, registered: registered, upcoming: true } %>
+        <%= render partial: 'event', locals: { spaces: @spaces_hash[event.id], event: event, user: @user, registered: registered, upcoming: true } %>
     <% end %>
     <!-- Previous Events -->
     <div class="row">
@@ -23,6 +23,6 @@
         </div>
     </div>
     <% @previous_events.each do |event| %>
-        <%= render partial: 'event', locals: { event: event, user: @user, registered: false, upcoming: false } %>
+        <%= render partial: 'event', locals: { spaces: @spaces_hash[event.id], event: event, user: @user, registered: false, upcoming: false } %>
     <% end %>
-</div><br>
+</div>

@@ -10,6 +10,15 @@ class EventsController < ApplicationController
 
     @user = current_user
 
+    @spaces_hash = Hash.new(0)
+
+    @registered_events.compact!
+
+    @registered_events.each do |event|
+      @spaces_hash.store(event.id, event.capacity - EventRegistration.where(event: event).count)
+    end
+
+
   end
 
   def show
@@ -21,11 +30,14 @@ class EventsController < ApplicationController
 
     @user = current_user
 
+    @spaces = @event.capacity - EventRegistration.where(event: @event).count
+
 
   end
 
   def new
     @event = Event.new
+
   end
 
   def create
@@ -70,6 +82,7 @@ class EventsController < ApplicationController
               :description,
               :start_time,
               :end_time,
-              :event_photo)
+              :event_photo,
+              :capacity)
   end
 end
