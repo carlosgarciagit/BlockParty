@@ -1,0 +1,55 @@
+<div class="col-6 mb-4">
+  <div class="bg-primary text-white" style="padding: 20px; border-radius: 20px;">
+    <h2><a class="text-white" href="/events/<%= event.id %>"> <%= event.name %> </a></h2> 
+
+    <div class="row mt-3">
+      <div class="col-6">
+        <img class="img-fluid" style="" src="<%= event.event_photo %>" alt="<%= event.name %>"/>
+      </div>
+
+      <div class="col-6">
+        <p>When:<br>
+          Where:<br>
+          Chef:<br>
+          Menu:<br>
+        </p>
+
+      </div>
+    </div>
+
+    <% if user != nil %>
+        <%= render partial: "attending", locals: {spaces: spaces, event: event} %>
+
+      <div class="row">
+        <% if user != nil %>
+          <% if not upcoming %>
+            <div></div>
+
+          <% elsif registered %>
+            <div class="col-6 text-white rounded">
+              <span class = "">You are signed up! </span>
+            </div>
+
+          <% else %>
+            <div class = "col-6 ", id= "event-register-<%= event.id %>">
+              <%= link_to 'Click to Register', register_for_event_path, class: 'btn btn-clear', data: {remote: true, method: 'post', params: "event_id= #{event.id}" }%><br>
+            </div>
+          <% end %>
+
+
+        <% else %>
+          <div class = "col-6 ", id= "event-register-<%= event.id %>">
+            <%= link_to 'Sign Up Now', new_user_registration_path, class: 'btn btn-clear' %><br>
+          </div>
+        <% end %>
+
+        <% if user.admin %>
+          <div class = 'col-6' style="float:right;">
+            <%= link_to 'Edit Event', edit_event_path(event.id), class: 'btn btn-clear' %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+
+  </div>
+</div>

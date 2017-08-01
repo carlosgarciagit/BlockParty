@@ -14,7 +14,7 @@ class EventsController < ApplicationController
 
     @registered_events.compact!
 
-    @registered_events.each do |event|
+    Event.all.each do |event|
       @spaces_hash.store(event.id, event.capacity - EventRegistration.where(event: event).count)
     end
 

@@ -22,8 +22,148 @@ $custom-file-text: (
 @import "trix";
 @import "**/*";
 
+.btn-clear {
+  background-color: transparent;
+  border-radius: .25rem;
+  color: white;
+  border-color: white;
+  border-width: medium;
+}
+
+.btn-clear:hover {
+  background-color: white;
+  color: $brand-primary;
+  border-color: white;
+  border-width: medium;
+}
+
+.searchbar {
+    background-color: #fff;
+    max-width: 100%;
+    width: 860px;
+    margin: 0 auto;
+    border-radius: 50px;
+    display: inline-block;
+}
+
+.location-fill {
+  width: 400px;
+  background-color: transparent;
+  border-right: 1px solid rgba(102, 102, 102, 0.12);
+  height: 36px;
+  padding-left: 25px;
+  display: inline-block;
+  line-height: 0;
+  margin: 7px 0;
+}
+
+.searchbar input {
+    background-color: transparent;
+    border-radius: 50px 0 0 50px;
+}
+
+.location-fill input {
+    width: 100%;
+    padding: 10px;
+    letter-spacing: .3px;
+}
+
+.min-date {
+    padding-left: 30px;
+    padding-right: 15px;
+    text-align: right;
+}
+
+.max-date {
+    padding-left: 15px;
+    padding-right: 30px;
+    border-right: 1px solid rgba(102, 102, 102, 0.12);
+}
+
+.caret-right {
+    color: rgba(0, 0, 0, 0.61);
+    fill: currentcolor;
+    vertical-align: middle;
+    width: 10px;
+    height: 10px;
+}
+
+.caret-down {
+    color: rgba(0, 0, 0, 0.61);
+    fill: currentcolor;
+    vertical-align: middle;
+    width: 10px;
+    height: 10px;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+.date-picker {
+    width: 100px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.61);
+    line-height: 34px;
+    display: inline-block;
+}
 
 
+.guest-select {
+    font-weight: 700;
+    width: 120px;
+    color: rgba(0, 0, 0, 0.61);
+    text-align: center;
+    padding-left: 20px;
+    display: inline-block;
+}
+
+select {
+    outline: none;
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: 0;
+    text-indent: 0;
+    border-radius: 0;
+    cursor: pointer;
+    text-transform: none;
+    box-sizing: border-box;
+    align-items: center;
+    white-space: pre;
+    -webkit-rtl-ordering: logical;
+}
+
+
+.submit-btn {
+    float: right;
+    color: #fff;
+    background-color: $brand-primary;
+    border: 0;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    line-height: 50px;
+    display: inline-block;
+    text-align: center;
+    font-size: 20px;
+    margin-right: -1px;
+    outline: none;
+    cursor: pointer;
+    padding: 0 20px 0 15px;
+    box-sizing: border-box;
+    transition: all .2s ease;
+}
+
+button, input {
+    overflow: visible;
+}
+
+input {
+    border: 0;
+    color: rgba(0, 0, 0, 0.61);
+    box-sizing: border-box;
+    font-weight: 600;
+    outline: none;
+}
 
 .bg-primary {
     background-color: $brand-primary;
@@ -37,8 +177,8 @@ $custom-file-text: (
 .footer-bot {
   background:
       linear-gradient(
-          rgba(0, 0, 0, 0.4),
-          rgba(0, 0, 0, 0.4)
+          rgba(0, 0, 0, 0.5),
+          rgba(0, 0, 0, 0.5)
       ),
       url(image-path("bbq-lesson.jpg"));
   background-position: center;

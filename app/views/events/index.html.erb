@@ -12,17 +12,22 @@
             <h2 class="mt-3 mb-3">Upcoming Events</h2>
         </div>
     </div>
-    <% @upcoming_events.each do |event| %>
-        <% registered = @registered_events.include?(event) %>
-        <%= render partial: 'event', locals: { spaces: @spaces_hash[event.id], event: event, user: @user, registered: registered, upcoming: true } %>
-    <% end %>
+
+    <div class="row">
+      <% @upcoming_events.each do |event| %>
+          <% registered = @registered_events.include?(event) %>
+          <%= render partial: 'event2', locals: { spaces: @spaces_hash[event.id], event: event, user: @user, registered: registered, upcoming: true } %>
+      <% end %>
+    </div>
     <!-- Previous Events -->
     <div class="row">
         <div class="col">
             <h2 class="mt-3 mb-3">Previous Events</h2>
         </div>
     </div>
-    <% @previous_events.each do |event| %>
-        <%= render partial: 'event', locals: { spaces: @spaces_hash[event.id], event: event, user: @user, registered: false, upcoming: false } %>
-    <% end %>
+    <div class="row">
+      <% @previous_events.each do |event| %>
+          <%= render partial: 'event2', locals: { spaces: @spaces_hash[event.id], event: event, user: @user, registered: false, upcoming: false } %>
+      <% end %>
+    </div>
 </div>
