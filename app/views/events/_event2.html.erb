@@ -1,55 +1,64 @@
-<div class="col-6 mb-4">
-  <div class="bg-primary text-white" style="padding: 20px; border-radius: 20px;">
-    <h2><a class="text-white" href="/events/<%= event.id %>"> <%= event.name %> </a></h2> 
 
-    <div class="row mt-3">
-      <div class="col-6">
-        <img class="img-fluid" style="" src="<%= event.event_photo %>" alt="<%= event.name %>"/>
-      </div>
 
-      <div class="col-6">
-        <p>When:<br>
-          Where:<br>
-          Chef:<br>
-          Menu:<br>
-        </p>
-
-      </div>
-    </div>
-
-    <% if user != nil %>
-        <%= render partial: "attending", locals: {spaces: spaces, event: event} %>
+  <div class="col-12 mb-4">
+    <div class="bg-primary text-white" style="padding: 30px; border-radius: 20px; max-height: auto;">
 
       <div class="row">
-        <% if user != nil %>
-          <% if not upcoming %>
-            <div></div>
+        <div class="col">
+          <h2><a class="text-white" href="/events/<%= event.id %>"> <%= event.name %> </a></h2>
+          <img class="img-fluid mt-2" style="max-height: auto; border-radius: 20px;" src="<%= event.event_photo %>" alt="<%= event.name %>"/>
+        </div>
 
-          <% elsif registered %>
-            <div class="col-6 text-white rounded">
-              <span class = "">You are signed up! </span>
-            </div>
-
-          <% else %>
-            <div class = "col-6 ", id= "event-register-<%= event.id %>">
-              <%= link_to 'Click to Register', register_for_event_path, class: 'btn btn-clear', data: {remote: true, method: 'post', params: "event_id= #{event.id}" }%><br>
-            </div>
-          <% end %>
+        <div class="col">
+          <div class="text-right"><h2><%= event.start_time.strftime("%b" "%e") %></h2></div>
+          <p>
+            <span style="color: black;">WHEN:</span> <%= event.start_time.strftime("%B%e at %l:%M %P" ) %><br>
+            <span style="color: black;">WHERE:</span> <%= event.location %><br>
+            <span style="color: black;">COST:</span> <%= event.cost %><br>
+            <%= sanitize(event.description) %>
+          </p>
 
 
-        <% else %>
-          <div class = "col-6 ", id= "event-register-<%= event.id %>">
-            <%= link_to 'Sign Up Now', new_user_registration_path, class: 'btn btn-clear' %><br>
+            <% if user != nil %>
+              <div id="users-going-<%= event.id %>">
+                <%= render partial: "attending",locals: {spaces: spaces, event: event} %>
+              </div>
+            <% end %>
+
+            <div class="row">
+              <% if user != nil %>
+                <% if not upcoming %>
+                  <div></div>
+
+                <% elsif registered %>
+                  <div class="col-6 text-white rounded">
+                    <span class = "">You are signed up! </span>
+                  </div>
+
+                <% else %>
+                  <div class = "col-6 ", id= "event-register-<%= event.id %>">
+                    <%= link_to 'Click to Register', register_for_event_path, class: 'btn btn-clear', data: {remote: true, method: 'post', params: "event_id= #{event.id}" }%><br>
+                  </div>
+                <% end %>
+
+
+                <% if user.admin %>
+                  <div class = 'col-6'>
+                    <%= link_to 'Edit', edit_event_path(event.id), class: 'btn btn-clear' %>
+                    <%= link_to 'Delete', edit_event_path(event.id), class: 'btn btn-clear' %>
+                  </div>
+                <% end %>
+
+              <% else %>
+                <div class = "col-6 ", id= "event-register-<%= event.id %>">
+                  <%= link_to 'Sign Up Now', new_user_registration_path, class: 'btn btn-clear' %><br>
+                </div>
+              <% end %>
           </div>
-        <% end %>
 
-        <% if user.admin %>
-          <div class = 'col-6' style="float:right;">
-            <%= link_to 'Edit Event', edit_event_path(event.id), class: 'btn btn-clear' %>
-          </div>
-        <% end %>
-      <% end %>
+
+        </div>
+      </div>
+
     </div>
-
   </div>
-</div>

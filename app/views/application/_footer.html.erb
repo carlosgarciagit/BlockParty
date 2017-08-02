@@ -1,31 +1,23 @@
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9&appId=429896290718534";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-<!-- <div class="fb-like col mt-2" data-href="https://www.facebook.com/Blockparty-1334459073304285/" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div> -->
-
+<!-- Add icon library -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<footer class="footer">
-    <div class="row footer-top text-center">
-      <div class="col">
-        <a href="https://www.facebook.com/Blockparty-1334459073304285/" class="fa fa:hover fa-facebook mt-4"></a>
-        <a href="https://www.twitter.com/" class="fa fa:hover fa-twitter mt-4"></a>
-        <a href="https://www.youtube.com/" class="fa fa:hover fa-youtube mt-4"></a>
-      </div>
+<div class="container footer">
+  <div class="row">
+    <div class="col-2">
+      <%= link_to "About Us", root_path, class: "footer-text"%><br>
+      <%= link_to "Contact", root_path, class: "footer-text"%>
+    </div>
+    <div class="col-2">
+      <%= link_to "Home", root_path, class: "footer-text"%><br>
+      <%= link_to "Events", events_path, class: "footer-text" %><br>
+      <%= link_to "Photos", events_path, class: "footer-text" %>
     </div>
 
-    <div class="row footer-top text-center">
-      <div class="col mt-4 mb-3">
-        <span class = "footer-text"><%= link_to "HOME", root_path %></span>
-        <span class = "footer-text"><%= link_to "EVENTS", events_path %></span>
-        <span class = "footer-text"><%= link_to "CONTACT", events_path %></span>
-      </div>
+    <div class="col-8 text-center">
+      <div class="mb-3 footer-text2">CONNECT WITH BLOCKPARTY</div>
+      <a href="https://www.facebook.com/Blockparty-1334459073304285/" class="fa fa-facebook"></a>
+      <a href="#" class="fa fa-twitter"></a>
+      <a href="#" class="fa fa-instagram"></a>
     </div>
-
-</footer>
+  </div>
+</div>

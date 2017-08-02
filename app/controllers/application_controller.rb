@@ -7,4 +7,10 @@ class ApplicationController < ActionController::Base
   def check_privileges!
     redirect_to "/", notice: 'You dont have enough permissions to be here' unless current_user.admin
   end
+
+  def search
+    EventRegistration.each do |event|
+    end
+  end
+
 end

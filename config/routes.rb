@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   resources :events
   post :register_for_event, to: "events#register"
 
+
 end
