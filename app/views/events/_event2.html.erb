@@ -5,14 +5,14 @@
 
       <div class="row">
         <div class="col">
-          <h2><a class="text-white" href="/events/<%= event.id %>"> <%= event.name %> </a></h2>
+          <h2><a class="event-name" href="/events/<%= event.id %>"> <%= event.name %> </a></h2>
           <img class="img-fluid mt-2" style="max-height: auto; border-radius: 20px;" src="<%= event.event_photo %>" alt="<%= event.name %>"/>
         </div>
 
         <div class="col">
           <div class="text-right"><h2><%= event.start_time.strftime("%b" "%e") %></h2></div>
           <p>
-            <span style="color: black;">WHEN:</span> <%= event.start_time.strftime("%B%e at %l:%M %P" ) %><br>
+            <span style="color: black;">WHEN:</span> <%= event.start_time.strftime("%B%e from %l:%M %P to")%> <%=event.end_time.strftime("%l:%M %P" ) %><br>
             <span style="color: black;">WHERE:</span> <%= event.location %><br>
             <span style="color: black;">COST:</span> <%= event.cost %><br>
             <%= sanitize(event.description) %>

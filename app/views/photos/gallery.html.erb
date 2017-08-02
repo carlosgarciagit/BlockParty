@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-4 text-center" style="margin: auto">
+      <h2>Welcome to the Blockparty!</h2>
+      <p style="color:gray;">Here at Blockparty, it's the people that matter. Share your photos using the #blockparty tag on Instagram, Facebook or Twitter.</p>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <% @images.each do |image| %>
+      <div class="col-3 mb-5">
+        <%= image_tag "gallery_images/#{image.split('/').last}", class: "thumb1" %>
+      </div>
+    <% end %>
+
+  </div>
+
+</div>

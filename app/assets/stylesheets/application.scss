@@ -180,6 +180,26 @@ input {
     background-color: $brand-primary;
 }
 
+.thumb1 {
+  object-fit: cover;
+  width:250px;
+  height:250px;
+  border-radius: 15px;
+}
+
+.thumb1:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  opacity: 0.7;
+ }
+
+
+.event-name {
+  color: white;
+}
+.event-name:hover {
+  text-decoration: none;
+  color: gray;
+}
 
 .btn-circle {
  border-radius: 50%;
