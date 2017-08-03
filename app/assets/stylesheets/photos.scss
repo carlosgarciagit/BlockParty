@@ -1,3 +1,16 @@
 // Place all the styles related to the photos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.thumb1 {
+  object-fit: cover;
+  width:250px;
+  height:250px;
+  border-radius: 15px;
+  margin: auto;
+}
+
+.thumb1:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  opacity: 0.7;
+ }

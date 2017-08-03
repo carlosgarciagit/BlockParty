@@ -19,6 +19,7 @@
 //= require_tree .
 
 
+
 // initialize chosen select boxes
 $(document).ready(function(){
     $('.chosen-select').chosen({width: '100%'});

@@ -1,20 +1,19 @@
+<!DOCTYPE><html><head>
 
 
-  <div class="col-12 mb-4">
-    <div class="bg-primary text-white" style="padding: 30px; border-radius: 20px; max-height: auto;">
-
+  <div class="event-card">
       <div class="row">
         <div class="col">
           <h2><a class="event-name" href="/events/<%= event.id %>"> <%= event.name %> </a></h2>
-          <img class="img-fluid mt-2" style="max-height: auto; border-radius: 20px;" src="<%= event.event_photo %>" alt="<%= event.name %>"/>
+          <img class="img-fluid mt-2 img-thumbnail" style="max-height: auto;" src="<%= event.event_photo %>" alt="<%= event.name %>"/>
         </div>
 
         <div class="col">
-          <div class="text-right"><h2><%= event.start_time.strftime("%b" "%e") %></h2></div>
+          <div class="event-name text-right"><h2><%= event.start_time.strftime("%b" "%e") %></h2></div>
           <p>
-            <span style="color: black;">WHEN:</span> <%= event.start_time.strftime("%B%e from %l:%M %P to")%> <%=event.end_time.strftime("%l:%M %P" ) %><br>
-            <span style="color: black;">WHERE:</span> <%= event.location %><br>
-            <span style="color: black;">COST:</span> <%= event.cost %><br>
+            <span class="details">WHEN:</span> <%= event.start_time.strftime("%B%e from %l:%M %P to")%> <%=event.end_time.strftime("%l:%M %P" ) %><br>
+            <span class="details">WHERE:</span> <%= event.location %><br>
+            <span class="details">COST:</span> <%= event.cost %><br>
             <%= sanitize(event.description) %>
           </p>
 
@@ -31,7 +30,7 @@
                   <div></div>
 
                 <% elsif registered %>
-                  <div class="col-6 text-white rounded">
+                  <div class="col-6">
                     <span class = "">You are signed up! </span>
                   </div>
 
@@ -60,5 +59,6 @@
         </div>
       </div>
 
-    </div>
   </div>
+
+</html>
