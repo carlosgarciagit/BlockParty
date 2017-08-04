@@ -254,11 +254,11 @@ input {
 }
 
 .footer-text {
-  color: gray;
+  color: black;
 }
 
 .footer-text2 {
-  color: gray;
+  color: black;
 }
 
 .footer-text:hover {
@@ -297,8 +297,11 @@ h6 {
 
 // footer styling
 .footer {
-  padding: 75px;
-  background-color: white;
+  padding-top: 50px;
+  padding-right: 50px;
+  padding-left: 50px;
+  padding-bottom: 75px;
+  background-color: #f7f7f7;
 }
 
 

@@ -14,6 +14,18 @@
     text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
 }
 
+h4 {
+  font-size: 20px;
+  color: black;
+}
+
+p {
+  color: gray;
+}
+
+
+
+
 .card-icon {
     width: 120px;
     display: block;
@@ -24,4 +36,19 @@
 .landing-text {
   margin-left: 50px;
   margin-top: 50px
+}
+
+.bullets {
+  padding: 40px 40px 40px 80px;
+  box-sizing: border-box;
+  vertical-align: top;
+  position: relative;
+}
+
+.circle {
+  height: 75px;
+  width: 75px;
+  background-color: $brand-primary;
+  border-radius: 50%;
+  text-align: center;
 }

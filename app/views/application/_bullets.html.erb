@@ -1,0 +1,129 @@
+<div class="row mt-5">
+  <div class="col-6 text-center" style="margin: auto">
+    <img src="<%= image_url('favicon.ico')%>" height="100px;" class="mb-5">
+    <h2>The Mission</h2>
+    <p style="color:gray;">Food insecurity is a huge problem in America. Blockparty curates events to help foodies and their friends have amazing culinary experiences while also fighting food insecurity in their communities</p>
+  </div>
+</div>
+
+  <div class="row mt-5 mb-3">
+    <div class="col text-center">
+      <h2>Recent Events</h2>
+    </div>
+  </div>
+
+<div class="container mb-3">
+  <div class="row">
+
+    <%= render partial: "event_card", locals: {image: 'gallery_images/blockparty_4.png',
+      title: "Cookies for CASPAR",
+      subtitle: "July 5th from 8 - 10pm",
+      content: "576 East Bluebird St. Cambridge, MA",
+      subcontent: "Our very own Abe Stein will be leading a cooking and smoking lesson for BBQ classic Memphis Ribs. "
+    }%>
+
+    <%= render partial: "event_card", locals: {image: 'gallery_images/blockparty_5.png',
+      title: "Chef Series: Ribs",
+      subtitle: "July 23rd from 7 - 9pm",
+      content: "657 Albright Ave. Boston, MA",
+      subcontent: "Our very own Abe Stein will be leading a cooking and smoking lesson for BBQ classic Memphis Ribs."
+    }%>
+
+    <%= render partial: "event_card", locals: {image: 'gallery_images/blockparty_6.png',
+      title: "Cooking Event: Food",
+      subtitle: "August 10th from 4 - 7pm",
+      content: "100 Main St. Cambridge, MA",
+      subcontent: "Our very own Abe Stein will be leading a cooking and smoking lesson for BBQ classic Memphis Ribs."
+    }%>
+
+  </div>
+</div>
+
+
+
+
+  <div class="row bullets">
+    <div class="col-6 mt-5 mb-5">
+
+      <div class= "row">
+        <div class="col-2">
+          <div class="circle" style="padding-top:15px;">
+            <img src="<%= image_url('friends.png')%>" height="60px;">
+          </div>
+        </div>
+        <div class="col-10">
+          <p><h4>Have fun with friends</h4></p>
+          <p>Blockparty provides a unique experience, enjoying food and drink in the company of friends while working together to bring a recipe to life.</p>
+        </div>
+      </div><br>
+
+      <div class= "row">
+        <div class="col-2">
+          <div class="circle" style="padding-top:7px;">
+            <img src="<%= image_url('icons/chef-white.png')%>" height="75px;">
+          </div>
+        </div>
+        <div class="col-10">
+          <p><h4>Learn</h4></p>
+          <p>Whether you’re an experienced chef or beginner, learn to cook (then eat!) new dishes with professional chefs.</p>
+        </div>
+      </div>
+
+
+
+    </div>
+
+
+    <div class="col-6 mt-5">
+
+      <div class= "row">
+        <div class="col-2">
+          <div class="circle" style="padding-top:15px;">
+            <img src="<%= image_url('connected-icon.png')%>" height="50px;">
+          </div>
+        </div>
+        <div class="col-10">
+          <p><h4>Give back</h4></p>
+          <p>Blockparty donates a portion of every payment to local causes battling hunger. Giving back to your community has never been so fun (or tasty!).</p>
+
+        </div>
+      </div><br>
+
+
+      <div class= "row">
+        <div class="col-2">
+          <div class="circle" style="padding-top:15px;">
+            <img src="<%= image_url('friends.png')%>" height="60px;">
+          </div>
+        </div>
+        <div class="col-10">
+          <p><h4>Have fun with friends</h4></p>
+          <p>Blockparty provides a unique experience, enjoying food and drink in the company of friends while working together to bring a recipe to life.</p>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col text-center mb-5" style="margin:auto;">
+      <%= link_to "See Events Near You", events_path, class: "btn btn-primary"%>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col text-center mb-5" style="margin:auto;">
+      <video width="700" controls>
+        <source src="<%= image_url('cookingvid.mp4')%>" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col text-center mb-5" style="margin:auto;">
+      <%= link_to "See Events Near You", events_path, class: "btn btn-primary"%>
+    </div>
+  </div>
