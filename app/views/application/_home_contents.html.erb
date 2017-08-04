@@ -1,4 +1,6 @@
-<div class="row mt-5">
+
+<!-- Mission Statement -->
+<div class="row mt-5 mb-5">
   <div class="col-6 text-center" style="margin: auto">
     <img src="<%= image_url('favicon.ico')%>" height="100px;" class="mb-5">
     <h2>The Mission</h2>
@@ -6,45 +8,51 @@
   </div>
 </div>
 
-  <div class="row mt-5 mb-3">
-    <div class="col text-center">
+
+
+<!-- Recent Event Cards -->
+<div class="row text-center" style="background-color:#f7f7f7;">
+  <div class="col mt-4 mb-3 text-center">
       <h2>Recent Events</h2>
-    </div>
   </div>
+</div>
 
-<div class="container mb-3">
-  <div class="row">
+<div class="row" style="background-color:#f7f7f7;">
+  <div class="container mb-5">
+    <div class="row">
 
-    <%= render partial: "event_card", locals: {image: 'gallery_images/blockparty_4.png',
-      title: "Cookies for CASPAR",
-      subtitle: "July 5th from 8 - 10pm",
-      content: "576 East Bluebird St. Cambridge, MA",
-      subcontent: "Our very own Abe Stein will be leading a cooking and smoking lesson for BBQ classic Memphis Ribs. "
-    }%>
+      <%= render partial: "event_card", locals: {image: 'gallery_images/blockparty_4.png',
+        title: "Cookies for CASPAR",
+        subtitle: "July 5th from 8 - 10pm",
+        content: "576 East Bluebird St. Cambridge, MA",
+        subcontent: "Our very own Abe Stein will be leading a cooking and smoking lesson for BBQ classic Memphis Ribs. "
+      }%>
 
-    <%= render partial: "event_card", locals: {image: 'gallery_images/blockparty_5.png',
-      title: "Chef Series: Ribs",
-      subtitle: "July 23rd from 7 - 9pm",
-      content: "657 Albright Ave. Boston, MA",
-      subcontent: "Our very own Abe Stein will be leading a cooking and smoking lesson for BBQ classic Memphis Ribs."
-    }%>
+      <%= render partial: "event_card", locals: {image: 'gallery_images/blockparty_5.png',
+        title: "Chef Series: Ribs",
+        subtitle: "July 23rd from 7 - 9pm",
+        content: "657 Albright Ave. Boston, MA",
+        subcontent: "Our very own Abe Stein will be leading a cooking and smoking lesson for BBQ classic Memphis Ribs."
+      }%>
 
-    <%= render partial: "event_card", locals: {image: 'gallery_images/blockparty_6.png',
-      title: "Cooking Event: Food",
-      subtitle: "August 10th from 4 - 7pm",
-      content: "100 Main St. Cambridge, MA",
-      subcontent: "Our very own Abe Stein will be leading a cooking and smoking lesson for BBQ classic Memphis Ribs."
-    }%>
+      <%= render partial: "event_card", locals: {image: 'gallery_images/blockparty_6.png',
+        title: "Cooking Event: Food",
+        subtitle: "August 10th from 4 - 7pm",
+        content: "100 Main St. Cambridge, MA",
+        subcontent: "Our very own Abe Stein will be leading a cooking and smoking lesson for BBQ classic Memphis Ribs."
+      }%>
 
+    </div>
   </div>
 </div>
 
 
 
-
+<!-- the four bullet points -->
   <div class="row bullets">
     <div class="col-6 mt-5 mb-5">
 
+      <!-- point #1 -->
       <div class= "row">
         <div class="col-2">
           <div class="circle" style="padding-top:15px;">
@@ -57,6 +65,7 @@
         </div>
       </div><br>
 
+      <!-- point #2 -->
       <div class= "row">
         <div class="col-2">
           <div class="circle" style="padding-top:7px;">
@@ -69,13 +78,12 @@
         </div>
       </div>
 
-
-
     </div>
 
 
     <div class="col-6 mt-5">
 
+      <!-- point #3 -->
       <div class= "row">
         <div class="col-2">
           <div class="circle" style="padding-top:15px;">
@@ -89,7 +97,7 @@
         </div>
       </div><br>
 
-
+      <!-- point #4 -->
       <div class= "row">
         <div class="col-2">
           <div class="circle" style="padding-top:15px;">
@@ -99,20 +107,14 @@
         <div class="col-10">
           <p><h4>Have fun with friends</h4></p>
           <p>Blockparty provides a unique experience, enjoying food and drink in the company of friends while working together to bring a recipe to life.</p>
-
         </div>
-
       </div>
+
     </div>
   </div>
 
 
-  <div class="row">
-    <div class="col text-center mb-5" style="margin:auto;">
-      <%= link_to "See Events Near You", events_path, class: "btn btn-primary"%>
-    </div>
-  </div>
-
+<!-- video -->
   <div class="row">
     <div class="col text-center mb-5" style="margin:auto;">
       <video width="700" controls>
@@ -122,6 +124,7 @@
     </div>
   </div>
 
+<!-- events button -->
   <div class="row">
     <div class="col text-center mb-5" style="margin:auto;">
       <%= link_to "See Events Near You", events_path, class: "btn btn-primary"%>
