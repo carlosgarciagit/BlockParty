@@ -1,0 +1,63 @@
+<!DOCTYPE><html><head>
+
+
+  <div class="event-card">
+      <div class="row">
+        <div class="col">
+          <img class="img-fluid" style="max-height: auto;" src="<%= event.event_photo %>" alt="<%= event.name %>"/>
+        </div>
+
+        <div class="col">
+          <!-- <div class="event-name text-right"><h2><%= event.start_time.strftime("%b" "%e") %></h2></div> -->
+          <p>
+            <h2><a class="event-name" href="/events/<%= event.id %>"> <%= event.name %> </a></h2>
+            <span class="details">WHEN:</span> <%= event.start_time.strftime("%B%e from %l:%M %P to")%> <%=event.end_time.strftime("%l:%M %P" ) %><br>
+            <span class="details">WHERE:</span> <%= event.location %><br>
+            <span class="details">COST:</span> <%= event.cost %><br>
+          </p>
+
+
+            <% if user != nil %>
+              <div id="users-going-<%= event.id %>">
+                <%= render partial: "attending",locals: {spaces: spaces, event: event} %>
+              </div>
+            <% end %>
+
+            <div class="row">
+              <% if user != nil %>
+                <% if not upcoming %>
+                  <div></div>
+
+                <% elsif registered %>
+                  <div class="col-6">
+                    <span class = "">You are signed up! </span>
+                  </div>
+
+                <% else %>
+                  <div class = "col-6 ", id= "event-register-<%= event.id %>">
+                    <%= link_to 'Click to Register', register_for_event_path, class: 'btn btn-primary', data: {remote: true, method: 'post', params: "event_id= #{event.id}" }%><br>
+                  </div>
+                <% end %>
+
+
+                <% if user.admin %>
+                  <div class = 'col-6'>
+                    <%= link_to 'Edit', edit_event_path(event.id), class: 'btn btn-primary' %>
+                    <%= link_to 'Delete', edit_event_path(event.id), class: 'btn btn-primary' %>
+                  </div>
+                <% end %>
+
+              <% else %>
+                <div class = "col-6 ", id= "event-register-<%= event.id %>">
+                  <%= link_to 'Sign Up Now', new_user_registration_path, class: 'btn btn-primary' %><br>
+                </div>
+              <% end %>
+          </div>
+
+
+        </div>
+      </div>
+
+  </div>
+
+</html>

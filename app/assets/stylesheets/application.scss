@@ -1,8 +1,8 @@
 $brand-primary: #27c2aa;
 $enable-shadows: true;
 $small-font-size: 70%;
-$font-family-sans-serif:  "proxima_nova_ltsemibold", Helvetica, Arial, sans-serif;
-$font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
+// $font-family-sans-serif:  "proxima_nova_ltsemibold", Helvetica, Arial, sans-serif;
+//$font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
 
 
 
@@ -38,15 +38,16 @@ $custom-file-text: (
 }
 
 .event-card {
-  padding: 30px;
+  padding: 0px;
   //border-radius: 20px;
-  border-style: solid;
-  border-color: black;
-  border-width: medium;
+  //border-style: solid;
+  //border-color: black;
+  //border-width: medium;
   background-color: transparent;
   max-height: auto;
   color: black;
   margin-bottom: 50px;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 
@@ -198,7 +199,7 @@ input {
 }
 
 .event-name {
-  color: $brand-primary;
+  color: black;
 }
 .event-name:hover {
   text-decoration: none;
