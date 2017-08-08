@@ -43,12 +43,12 @@
                 <% if user.admin %>
                   <div class = 'col-6'>
                     <%= link_to 'Edit', edit_event_path(event.id), class: 'btn btn-primary' %>
-                    <%= link_to 'Delete', edit_event_path(event.id), class: 'btn btn-primary' %>
+                    <%= link_to 'Delete', {:controller => :events, :action => 'destroy', :id => event.id }, :method => :delete, class: 'btn btn-primary' %>
                   </div>
                 <% end %>
 
               <% else %>
-                <div class = "col-6 ", id= "event-register-<%= event.id %>">
+                <div class = "col-6">
                   <%= link_to 'Sign Up Now', new_user_registration_path, class: 'btn btn-primary' %><br>
                 </div>
               <% end %>

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   end
 
   #TODO authenticate other event routes
-  resources :events, :photos, :about
+  resources :events, :photos, :about, :contact
   post :register_for_event, to: "events#register"
 
 

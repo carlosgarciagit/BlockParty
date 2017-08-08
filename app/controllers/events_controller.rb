@@ -40,6 +40,13 @@ class EventsController < ApplicationController
 
   end
 
+  def destroy
+    @event =  Event.find(params[:id])
+    @event.destroy()
+
+    redirect_to :events
+  end
+
   def create
     @event = Event.new(event_params)
     if @event.save
@@ -83,6 +90,8 @@ class EventsController < ApplicationController
               :start_time,
               :end_time,
               :event_photo,
-              :capacity)
+              :capacity,
+              :location,
+              :cost)
   end
 end

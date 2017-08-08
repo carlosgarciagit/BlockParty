@@ -37,11 +37,11 @@ p {
   margin-top: 50px
 }
 
-.bullets {
-  padding: 40px 40px 40px 80px;
-  box-sizing: border-box;
-  vertical-align: top;
-  position: relative;
+.bullet {
+  text-align: center;
+  margin: 30px;
+  max-width: 40%;
+  display: inline-grid;
 }
 
 .circle {
