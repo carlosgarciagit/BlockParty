@@ -22,6 +22,10 @@ $custom-file-text: (
 @import "trix";
 @import "**/*";
 
+.container {
+  width:95%;
+}
+
 .btn-clear {
   background-color: transparent;
   border-radius: .25rem;
@@ -36,6 +40,7 @@ $custom-file-text: (
   border-color: $brand-primary;
   border-width: medium;
 }
+
 
 .event-card {
   padding: 0px;
