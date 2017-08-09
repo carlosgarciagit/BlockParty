@@ -24,7 +24,7 @@ $custom-file-text: (
 
 
 .container {
-  width:95%;
+  width: 80%
 }
 
 .btn-clear {
@@ -42,6 +42,10 @@ $custom-file-text: (
   border-width: medium;
 }
 
+.card {
+  height: 600px;
+  width: 300px;
+}
 
 .event-card {
   padding: 0px;
