@@ -43,7 +43,7 @@
                 <% if user.admin %>
                   <div class = 'col-6'>
                     <%= link_to 'Edit', edit_event_path(event.id), class: 'btn btn-primary' %>
-                    <%= link_to 'Delete', {:controller => :events, :action => 'destroy', :id => event.id }, :method => :delete, class: 'btn btn-primary' %>
+                    <%= link_to 'Delete', {:controller => :events, :action => 'destroy', :id => event.id }, :data => {:confirm => "Are you sure you want to do that?"}, :method => :delete, class: 'btn btn-primary' %>
                   </div>
                 <% end %>
 
