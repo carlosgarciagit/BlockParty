@@ -39,9 +39,11 @@ p {
 
 .bullet {
   text-align: center;
-  margin: 30px;
-  max-width: 40%;
+  margin: 0px auto;
+  max-width: 100vh;
+  min-width: 20vh;
   display: inline-grid;
+  padding: 10px;
 }
 
 .circle {

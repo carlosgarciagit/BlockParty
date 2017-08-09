@@ -1,11 +1,11 @@
 
 
 <!-- Mission Statement -->
-<div class="row mt-5 mb-5">
-  <div class="col-6 text-center" style="margin: auto">
+<div class="mt-5 mb-5">
+  <div class="text-center" style="margin: auto">
     <img src="<%= image_url('favicon.ico')%>" height="100px;" class="mb-5">
     <h2>The Mission</h2>
-    <p style="color:gray;">Food insecurity is a huge problem in America. Blockparty curates events to help foodies and their friends have amazing culinary experiences while also fighting food insecurity in their communities</p>
+    <div style="margin: auto; max-width: 100vh;"><p style="color:gray;">Food insecurity is a huge problem in America. Blockparty curates events to help foodies and their friends have amazing culinary experiences while also fighting food insecurity in their communities</p></div>
   </div>
 </div>
 
@@ -18,7 +18,7 @@
   </div>
 </div>
 
-<div class="row" style="background-color:#f7f7f7; margin: auto;">
+<div class="row" style="background-color:#f7f7f7; padding-left: 30px;padding-right: 30px;">
 
       <%= render partial: "event_card", locals: {image: 'gallery_images/blockparty_4.png',
         title: "Cookies for CASPAR",
@@ -57,7 +57,7 @@
 
 
 <!-- the four bullet points -->
-  <div class="container text-center mt-5 mb-5">
+  <div class="text-center mt-5 mb-5">
 
       <!-- point #1 -->
       <%= render partial: "bullet", locals: {image:"friends-circ.png",
