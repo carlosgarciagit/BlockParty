@@ -32,6 +32,8 @@ class EventsController < ApplicationController
 
     @spaces = @event.capacity - EventRegistration.where(event: @event).count
 
+    
+
 
   end
 

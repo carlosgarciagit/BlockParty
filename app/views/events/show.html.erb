@@ -1,3 +1,117 @@
-<div class="container mt-5 mb-3">
-    <%= render partial: 'event3', locals: { spaces: @spaces, event: @event, user: @user, upcoming: @upcoming, registered: @registered} %>
+<style>
+#header-image {
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.1),
+            rgba(0, 0, 0, 0.1)
+        ),
+        url("<%= @event.event_photo %>");
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 50%;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
+}
+
+p {
+  color: black;
+}
+</style>
+
+<script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
+
+
+<div class="container-fluid">
+  <div class="row text-white" id="header-image" style="padding-top:250px;">
+    <div class = "col" style="padding-left:100px;">
+      <h1> <%= @event.name %> </h1>
+    </div>
+    <div class = "col" style="text-align: right; padding-right:100px;">
+      <h1> <%= @event.start_time.strftime("%D") %> </h1>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col mt-2" style="max-width: 300px; text-align:right; padding-left: 100px; padding-top: 50px;">
+      <p><span class="details">WHEN:</span></p>
+      <p><span class="details">WHERE:</span> </p>
+      <p><span class="details">COST:</span> </p>
+      <p><span class="details">DESCRIPTION:</span></p>
+    </div>
+
+    <div class="col mt-2" style="max-width: 600px; padding-top: 50px;">
+      <p><%= @event.start_time.strftime("%B %e from %l:%M %P to")%> <%=@event.end_time.strftime("%l:%M %P" ) %></p>
+      <p><%= @event.location %></p>
+      <p><%= @event.cost %></p>
+      <p><%= sanitize(@event.description) %></p>
+    </div>
+
+
+    <div class="col" style="padding-top: 50px; padding-right:100px;">
+      <% if @user != nil %>
+        <div id="users-going-<%= @event.id %>">
+          <%= render partial: "attending",locals: {spaces: @spaces, event: @event} %>
+        </div>
+      <% end %>
+
+      <div class="row">
+        <% if @user != nil %>
+          <% if not @upcoming %>
+            <div></div>
+
+          <% elsif @registered %>
+            <div class="col">
+              <span><h4>You are signed up for this event. See you there! </h4></span>
+            </div>
+
+          <% else %>
+            <div class = "col ", id= "event-register-<%= @event.id %>">
+              <%= link_to 'Click to Register', register_for_event_path, class: 'btn btn-primary', data: {remote: true, method: 'post', params: "event_id= #{@event.id}" }%><br>
+            </div>
+          <% end %>
+
+
+        <% else %>
+          <div class = "col">
+            <%= link_to 'Sign Up Now', new_user_registration_path, class: 'btn btn-primary' %><br>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+
+    <% if @user.admin %>
+      <div class="row mt-5 mb-5">
+        <div class="col" style="max-width: 400px; text-align:right;">
+          <h3>Administrative Info</h3>
+          <p><h4>NAME</h4></p>
+          <% @event.users.each do |user| %>
+            <p><%= user.first_name %>
+            <%= user.last_name %></p>
+          <% end %>
+        </div>
+        <div class="col">
+          <h3> : </h3>
+          <p><h4>EMAIL</h4></p>
+          <% @event.users.each do |user| %>
+            <p><%= user.email %><p>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="row mb-5">
+        <div class="col text-center">
+          <%= link_to 'Edit Event', edit_event_path(@event.id), class: 'btn btn-primary' %>
+          <%= link_to 'Delete Event', {:controller => :events, :action => 'destroy', :id => @event.id}, :data => {:confirm => "Are you sure you want to do that?"}, :method => :delete, class: 'btn btn-primary' %>
+        </div>
+      </div>
+    <% end %>
+
+
+
+
 </div>

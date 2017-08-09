@@ -11,7 +11,7 @@
           <!-- <div class="event-name text-right"><h2><%= event.start_time.strftime("%b" "%e") %></h2></div> -->
           <p>
             <h2><a class="event-name" href="/events/<%= event.id %>"> <%= event.name %> </a></h2>
-            <span class="details">WHEN:</span> <%= event.start_time.strftime("%B%e from %l:%M %P to")%> <%=event.end_time.strftime("%l:%M %P" ) %><br>
+            <span class="details">WHEN:</span> <%= event.start_time.strftime("%B %e from %l:%M %P to")%> <%=event.end_time.strftime("%l:%M %P" ) %><br>
             <span class="details">WHERE:</span> <%= event.location %><br>
             <span class="details">COST:</span> <%= event.cost %><br>
           </p>
