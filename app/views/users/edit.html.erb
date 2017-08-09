@@ -48,23 +48,46 @@
         </div>
     <% end %><br>
 
-    <div class = 'form-group row'>
-      <div class = 'col'>
+    <div class = 'row mb-3'>
         <span><h2>Your Upcoming Events</h2></span><br>
-          <div class = 'row'>
-            <% @upcoming_events.each do |event| %>
-              <%= render partial: 'events/event_display', locals: { event: event } %>
-            <% end %>
-          </div><br>
+    </div>
 
+    <div class= "row">
+          <% @upcoming_events.each do |event| %>
+            <div class = 'col'>
+              <%= render partial: "event_card2", locals: {image: event.event_photo,
+                title: event.name ,
+                subtitle: event.start_time.strftime("%B %e from %l:%M %P to") + event.end_time.strftime("%l:%M %P" ),
+                content: event.location,
+                subcontent: event.id
+              }%>
+            </div>
+
+          <% end %>
+
+    </div>
+
+
+
+    <div class = 'row mb-3'>
         <span><h2>Your Previous Events</h2></span><br>
-          <div class = 'row'>
-            <% @previous_events.each do |event| %>
-              <%= render partial: 'events/event_display', locals: { event: event } %>
-            <% end %>
-          </div>
+    </div>
 
-      </div>
+        <div class= "row">
+            <div class = 'col'>
+              <% @previous_events.each do |event| %>
+
+                <%= render partial: "event_card2", locals: {image: event.event_photo,
+                  title: event.name ,
+                  subtitle: event.start_time,
+                  content: event.location,
+                  subcontent: " "
+                }%>
+
+              <% end %>
+            </div>
+        </div>
+
     </div>
 
 </div>
