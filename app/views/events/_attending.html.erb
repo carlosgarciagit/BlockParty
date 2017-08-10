@@ -3,7 +3,11 @@
   <div class = 'col text-center' style="margin:auto;">
     <% event.users.each do |user| %>
       <div style="padding:5px; display: inline-block;">
-        <img class="circles"src="<%= user.avatar %>" alt="Profile" />
+        <% if user.avatar.file.nil? %>
+          <img class="circles" src= "<%= image_url('blank_avatar.png') %>"/>
+        <% else %>
+          <img class="circles" src="<%= user.avatar %>" />
+        <% end %>
       </div>
     <% end %>
   </div>
