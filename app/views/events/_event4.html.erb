@@ -1,0 +1,42 @@
+<style>
+  a:hover {
+    text-decoration: none;
+  }
+
+  @media only screen and (max-width: 900px) {
+   .bigbunny {
+     font-size:17px !important;
+     line-height:125% !important;
+     text-align: center;
+
+   }
+
+   .hide {
+     width: 0;
+     height: 0;
+     font-size: 0px;
+   }
+ }
+
+</style>
+
+<a class="hvr-grow" href="/events/<%= event.id %>">
+  <div class="row event-card mb-5" >
+    <div class="col" style="padding: 0px; max-width:50%">
+      <img class="img-fluid" style="border-radius:20px;" src="<%= event.event_photo %>" alt="<%= event.name %>"/>
+    </div>
+
+    <div class="col text-center" style="margin: auto;">
+
+      <div class="bigbunny" style="font-size: 30px">
+        <span ><%= event.name %></span>
+      </div>
+
+      <div class="hide">
+        <span ><%= event.location %></span>
+      </div>
+
+    </div>
+
+  </div>
+</a>

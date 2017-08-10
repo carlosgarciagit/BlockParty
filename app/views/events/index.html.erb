@@ -18,12 +18,12 @@
         </div>
     </div>
 
-    <div class ="row">
+
       <% @upcoming_events.each do |event| %>
           <% registered = @registered_events.include?(event) %>
-          <%= render partial: 'event3', locals: { spaces: @spaces_hash[event.id], event: event, user: @user, registered: registered, upcoming: true } %>
+          <%= render partial: 'event4', locals: { spaces: @spaces_hash[event.id], event: event, user: @user, registered: registered, upcoming: true } %>
       <% end %>
-    </div>
+    
 
     <!-- Previous Events -->
     <div class="row">
@@ -34,7 +34,7 @@
 
     <dic class="row">
       <% @previous_events.each do |event| %>
-          <%= render partial: 'event3', locals: { spaces: @spaces_hash[event.id], event: event, user: @user, registered: false, upcoming: false } %>
+          <%= render partial: 'event4', locals: { spaces: @spaces_hash[event.id], event: event, user: @user, registered: false, upcoming: false } %>
       <% end %>
     </div>
 

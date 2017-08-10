@@ -1,18 +1,9 @@
-<div id= "users-going-<%= event.id %>">
 
-  <% if Time.zone.now < event.end_time %>
-    <div class = 'mt-2 mb-2'>
-      There are <%= spaces %> spaces left.
-    </div>
-  <% else %>
-    <div class = 'mt-2 mb-2'></div>
-  <% end %>
 
-  <div class = 'row'>
+  <div class = 'col text-center' style="margin:auto;">
     <% event.users.each do |user| %>
-      <div class = 'mb-2' style="display: inline-block; padding-left: 10px;">
-        <img class="rounded-circle img-thumbnail"  src="<%= user.avatar %>" alt="Profile" width="50" height="50" />
+      <div style="padding:5px; display: inline-block;">
+        <img class="circles"src="<%= user.avatar %>" alt="Profile" />
       </div>
     <% end %>
   </div>
-</div>
