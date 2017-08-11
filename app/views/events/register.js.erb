@@ -1,6 +1,10 @@
 var registerLink = $("#event-register-<%= @event.id %>");
 var usersGoing = $("#users-going-<%= @event.id %>");
+var admin = $("#admin-<%= @event.id %>");
 
-registerLink.html("<div class='col-4 pt-1 pb-1 text-center bg-primary text-white rounded'><span class = 'align-bottom'>Signed up!</span></div>")
 
-usersGoing.html("<%= render partial: 'attending', locals: {spaces: spaces, event: event} %>")
+registerLink.html("<div class='col'><span><h4>You are signed up for this event. See you there! </h4></span></div>")
+
+usersGoing.html("<div class = 'col text-center' style='margin:auto;'><% @event.users.each do |user| %><div style='padding:5px; display: inline-block;'><% if user.avatar.file.nil? %><img class='circles' src= '<%= image_url('blank_avatar.png') %>'/><% else %><img class='circles' src='<%= user.avatar %>' /><% end %></div><% end %></div>")
+
+admin.html("<div id= 'admin-<%=@event.id %>' class='text-center mt-5 mb-5'><h3>Administrative Info</h3><p><h4>Name & Email of Registered</h4></p><% @event.users.each do |user| %><div style='display:inline-grid; margin: 10px;'><p><%= user.first_name %><%= user.last_name %><br> <%= user.email %></p></div><% end %></div>")

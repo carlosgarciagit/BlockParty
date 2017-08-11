@@ -32,7 +32,7 @@ class EventsController < ApplicationController
 
     @spaces = @event.capacity - EventRegistration.where(event: @event).count
 
-    
+
 
 
   end
@@ -81,7 +81,11 @@ class EventsController < ApplicationController
   def register
     @event = Event.find(params[:event_id])
     user = current_user
-    event_registration = EventRegistration.create(event: @event, user: user)
+    exists = EventRegistration.where(event: @event, user: user).count
+
+    if exists == 0
+      event_registration = EventRegistration.create(event: @event, user: user)
+    end
   end
 
   private
