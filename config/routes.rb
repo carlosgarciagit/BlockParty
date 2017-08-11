@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resource :users, only: [:edit, :update]
   end
 
+
   #TODO authenticate other event routes
   resources :events, :photos, :about, :contact
   post :register_for_event, to: "events#register"

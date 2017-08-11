@@ -108,15 +108,13 @@ p {
 
       <div id= "admin-<%=@event.id %>" class="text-center mt-5 mb-5">
           <h3>Administrative Info</h3>
-          <p><h4>Name & Email of Registered</h4></p>
+          <p><h4>Name &amp; Email of Registered</h4></p>
           <% @event.users.each do |user| %>
 
             <div style="display:inline-grid; margin: 10px;">
               <p><%= user.first_name %>
               <%= user.last_name %><br> <%= user.email %></p>
             </div>
-
-
           <% end %>
 
       </div>

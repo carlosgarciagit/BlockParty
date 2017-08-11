@@ -32,9 +32,17 @@
         <span ><%= event.name %></span>
       </div>
 
+      <h4>
       <div class="hide">
-        <span ><%= event.location %></span>
+        <span><%= event.start_time.strftime("%B %e")%></span>
       </div>
+      </h4>
+
+
+      <div class="hide">
+        <span ><%= sanitize(event.short_desc) %></span>
+      </div>
+
 
     </div>
 

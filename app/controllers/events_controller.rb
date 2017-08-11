@@ -50,6 +50,19 @@ class EventsController < ApplicationController
     redirect_to :events
   end
 
+
+  def unreg
+    user = current_user
+    event = Event.find(params[:id])
+
+    @eventreg = EventRegistration.where(user: user, event: event)
+
+    @eventreg.destroy()
+
+    redirect_to :events
+  end
+
+
   def create
     @event = Event.new(event_params)
     if @event.save
@@ -99,6 +112,7 @@ class EventsController < ApplicationController
               :event_photo,
               :capacity,
               :location,
-              :cost)
+              :cost,
+              :short_desc)
   end
 end
