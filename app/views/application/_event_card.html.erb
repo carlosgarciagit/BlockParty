@@ -10,11 +10,12 @@
 
 
 <a class="hvr-grow" href="/events/<%= event.id %>" style="margin:auto;">
-  <div class="card mb-5 text-center" style="border-radius:20px;margin:auto;">
+  <div class="card mb-5 text-center" style="border-radius:20px;">
     <img src="<%= event.event_photo %>" style="border-radius:20px;width:100%">
     <div class="container-fluid">
       <h2 style="padding-top:10px;"> <%= event.name %> </h2>
       <p class="title"> <%= sanitize(event.short_desc) %> </p>
+
     </div>
   </div>
 </a>
