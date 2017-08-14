@@ -1,11 +1,20 @@
+<style>
+  a {
+    color:black;
+  }
+  a:hover {
+    text-decoration: none;
+    color:black;
+  }
+</style>
 
-  <div class="card mb-5" style=" margin:auto;">
-    <img src="<%= image_url( image )%>" style="width:100%">
+
+<a class="hvr-grow" href="/events/<%= event.id %>">
+  <div class="card mb-5 text-center" style="border-radius:20px;margin:auto;">
+    <img src="<%= event.event_photo %>" style="border-radius:20px;width:100%">
     <div class="container-fluid">
-      <h2 style="padding-top:10px;"> <%= title %> </h2>
-      <p class="title"> <%= subtitle %> </p>
-      <p><%= content %></p>
-      <p> <%= subcontent %></p>
-      <!-- <p class="text-center"><%= link_to "Learn More", events_path, class: "btn btn-primary"%></p> -->
+      <h2 style="padding-top:10px;"> <%= event.name %> </h2>
+      <p class="title"> <%= sanitize(event.short_desc) %> </p>
     </div>
   </div>
+</a>

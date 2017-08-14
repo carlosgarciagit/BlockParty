@@ -2,6 +2,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def home
+    now = Time.zone.now
+    @previous_events = Event.all.where('end_time < ?', now)
   end
 
   def check_privileges!

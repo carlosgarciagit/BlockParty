@@ -299,7 +299,7 @@ DEPENDENCIES
   capistrano-rbenv (~> 2.1)
   capistrano3-puma
   capybara (~> 2.13)
-  carrierwave (~> 1.0)
+  carrierwave
   chosen-rails
   devise
   fog-aws
@@ -324,4 +324,4 @@ DEPENDENCIES
   yui-compressor
 
 BUNDLED WITH
-   1.15.1
+   1.15.3
