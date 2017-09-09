@@ -32,7 +32,7 @@
   <div class="container">
     <div class="row">
       <div class="col text-center mb-5" style="margin:auto;">
-        <%= link_to "See Events Near You", events_path, class: "btn btn-primary"%>
+        <%= link_to "Events Near You", events_path, class: "btn btn-primary"%>
       </div>
     </div>
   </div>
@@ -42,28 +42,28 @@
 
 
 <!-- the four bullet points -->
-  <div class="text-center mt-5 mb-5">
+<div class="row text-center mt-5 mb-5">
 
-      <!-- point #1 -->
-      <%= render partial: "bullet", locals: {image:"friends-circ.png",
-                                              title:"Have Fun",
-                                              content:"Blockparty provides a unique volunteering experience that is engaging and fun for all people of all ages.",} %>
+    <!-- point #1 -->
+    <%= render partial: "bullet", locals: {image:"friends-circ.png",
+                                            title:"Have Fun",
+                                            content:"Blockparty provides a unique volunteering experience that is engaging and fun for all people of all ages.",} %>
 
-      <%= render partial: "bullet", locals: {image:"learn-circ.png",
-                                              title:"Learn",
-                                              content:"Whether you’re an experienced chef or beginner, learn to cook (then eat!) new dishes with professional chefs.",} %>
+    <%= render partial: "bullet", locals: {image:"learn-circ.png",
+                                            title:"Learn",
+                                            content:"Whether you’re an experienced chef or beginner, learn to cook (then eat!) new dishes with professional chefs.",} %>
 
-      <%= render partial: "bullet", locals: {image:"hands-circ.png",
-                                              title:"Give Back",
-                                              content:"Blockparty donates a portion of every payment to local causes battling hunger. Giving back to your community has never been so fun (or tasty!).",} %>
+    <%= render partial: "bullet", locals: {image:"hands-circ.png",
+                                            title:"Give Back",
+                                            content:"Blockparty donates a portion of every payment to local causes battling hunger. Giving back to your community has never been so fun (or tasty!).",} %>
 
-      <%= render partial: "bullet", locals: {image:"group-circ.png",
-                                              title:"Relax with Friends",
-                                              content:"Enjoy food and drink in the company of friends while working together to bring a recipe to life.",} %>
+    <%= render partial: "bullet", locals: {image:"group-circ.png",
+                                            title:"Relax with Friends",
+                                            content:"Enjoy food and drink in the company of friends while working together to bring a recipe to life.",} %>
 
 
 
-  </div>
+</div>
 
 
 <!-- video -->
@@ -74,8 +74,8 @@
   <!-- </div> -->
 
 <!-- events button -->
-  <div class="row">
-    <div class="col text-center mb-5" style="margin:auto;">
-      <%= link_to "See Events Near You", events_path, class: "btn btn-primary"%>
-    </div>
-  </div>
+<!-- <div class="row">
+     <div class="col text-center mb-5" style="margin:auto;">
+     <%= link_to "Events Near You", events_path, class: "btn btn-primary"%>
+     </div>
+     </div> -->

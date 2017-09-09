@@ -26,7 +26,7 @@ $(document).ready(function(){
     var signUpModal = !!$("#sign-up-modal").length;
     var notSignedIn = !$("#user-is-logged-in").length;
     if(signUpModal && notSignedIn) {
-        $("#sign-up-modal").modal("show");
+        $("#sign-up-modal").modal({show: true, keyboard: true, focus: true, backdrop: true});
     }
 });
 
