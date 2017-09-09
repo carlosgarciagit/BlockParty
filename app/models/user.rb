@@ -35,4 +35,13 @@ class User < ApplicationRecord
     end
   end
 
+  def full_name
+    "#{first_name} #{last_name}" if first_name.present? && last_name.present?
+  end
+
+  def full_name=(n)
+    split = n.split(" ")
+    self.update(first_name: split[0], last_name: split[1])
+  end
+
 end
