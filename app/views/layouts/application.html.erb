@@ -30,7 +30,6 @@
                             <%= nav_link "Events", events_path %>
                             <%= nav_link "Photos", photos_path %>
                             <%= nav_link "About Us", about_index_path %>
-
                             <% if current_user.present? %>
                                 <li id="user-is-logged-in" class="nav-item dropdown <%= current_page?(edit_users_path) ? "active <span class='sr-only'>(current)</span>" : '' %>">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
