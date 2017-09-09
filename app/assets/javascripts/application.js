@@ -33,7 +33,7 @@ $(document).ready(function(){
 function myMap() {
     var mapOptions = {
         center: new google.maps.LatLng(51.5, -0.12),
-        zoom: 10,
+        zoom: 10,email_field
         mapTypeId: google.maps.MapTypeId.HYBRID
     };
     var map = new google.maps.Map(document.getElementById("map"), mapOptions);
