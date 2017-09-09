@@ -23,6 +23,11 @@
 // initialize chosen select boxes
 $(document).ready(function(){
     $('.chosen-select').chosen({width: '100%'});
+    var signUpModal = !!$("#sign-up-modal").length;
+    var notSignedIn = !$("#user-is-logged-in").length;
+    if(signUpModal && notSignedIn) {
+        $("#sign-up-modal").modal("show");
+    }
 });
 
 function myMap() {
@@ -30,8 +35,8 @@ function myMap() {
         center: new google.maps.LatLng(51.5, -0.12),
         zoom: 10,
         mapTypeId: google.maps.MapTypeId.HYBRID
-    }
-var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+    };
+    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 }
 
 window.smoothScroll = function(target) {
@@ -52,7 +57,9 @@ window.smoothScroll = function(target) {
         i++; if (i > 30) return;
         c.scrollTop = a + (b - a) / 30 * i;
         setTimeout(function(){ scroll(c, a, b, i); }, 20);
-    }
+    };
     // start scrolling
     scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
 }
+
+
